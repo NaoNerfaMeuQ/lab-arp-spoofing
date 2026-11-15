@@ -9,6 +9,7 @@ Laboratório prático demonstrando um ataque de **ARP Spoofing** seguido de capt
 ## Índice
 
 - [Objetivo](#objetivo)
+- [Perigos](#perigos)
 - [Como funciona o ARP Spoofing](#como-funciona-o-arp-spoofing)
 - [Ambiente](#ambiente)
 - [Ferramentas utilizadas](#ferramentas-utilizadas)
@@ -22,6 +23,20 @@ Laboratório prático demonstrando um ataque de **ARP Spoofing** seguido de capt
 ## Objetivo
 
 Demonstrar, de ponta a ponta, como a ausência de proteções contra ARP Spoofing na camada 2 combinada com tráfego HTTP não criptografado permite a um atacante capturar credenciais de um usuário na mesma rede local — e documentar o processo com rigor técnico suficiente para compor um portfólio de segurança ofensiva.
+
+
+## Perigos
+
+Você já deve ter ouvido falar de um ataque Man-In-The-Middle, certo? E como um ataque desse pode ter relação com o protocolo ARP e seu comprometimento?
+Ataques Man-in-the-Middle (MITM) são um dos temas mais recorrentes na cultura pop quando o assunto é hacking — cenas de interceptação de tráfego, redes Wi-Fi falsas e sequestro de sessões aparecem com frequência em séries como Mr. Robot, que popularizou a ideia de que o “hacker” não precisa quebrar criptografia: basta se posicionar no meio do caminho e esperar os dados passarem.
+
+Essa representação não é exagero. O princípio por trás do ARP Spoofing — explorar protocolos de rede que não autenticam quem está falando — continua válido décadas depois de criado, e é a base de ataques reais em redes corporativas, públicas (aeroportos, cafés, hotéis) e até IoT.
+
+O que mudou foi a defesa, não a ameaça: HTTPS, TLS e HSTS tornaram a interceptação de conteúdo muito mais difícil, mas não eliminaram o problema. Certificados mal configurados, usuários que ignoram avisos de segurança, aplicativos que não validam certificados corretamente, redes corporativas com inspeção SSL mal implementada e dispositivos IoT que ainda falam HTTP puro continuam dando brecha para esse tipo de ataque. Em outras palavras: a criptografia resolveu o “o que” é interceptado, mas não resolveu o “quem pode se posicionar no meio” — e é exatamente essa lacuna que o ARP Spoofing explora.
+
+
+
+
 
 ## Como funciona o ARP Spoofing
 
